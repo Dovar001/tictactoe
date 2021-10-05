@@ -3,11 +3,14 @@ import Square from './Square'
 
 import '../styles/root.scss'
 
-const Board = ({handleOnclick,board}) => {
+const Board = ({handleOnclick,board,winnerSquares}) => {
     
-    const renderSquare = (position) => {
+    const renderSquare = position => {
+ 
+        const isWinningSquares = winnerSquares.includes(position);
        return ( 
         <Square 
+        isWinningSquares={isWinningSquares}
         value={board[position]} 
         onClick={()=>handleOnclick(position)} 
         />

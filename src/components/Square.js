@@ -1,8 +1,11 @@
 import React from 'react'
 
-const Square = ({value,onClick}) => {
+const Square = ({value,onClick,isWinningSquares}) => {
     return (
-        <button className="square" onClick={onClick}>
+        <button  
+        onClick={onClick}
+        className={` square ${isWinningSquares? 'winning' : ''} ${value === 'X'? 'text-green' : 'text-orange'} ` }
+        >
              {value}
         </button>
     )
